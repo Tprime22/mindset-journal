@@ -81,7 +81,7 @@ export async function analyzeSentiment(text) {
   }
   lastCallTime = Date.now();
 
-  const apiKey = VITE_HF_API_KEY=hf_your_token_here'';
+  const apiKey = import.meta.env.VITE_HF_API_KEY;
 
   // If no API key is configured, return a mock sentiment based on text length
   // This allows the app to function in demo mode
