@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ──────────────────────────────────────────────
+   Base & Typography
+   ────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-ink-100 text-ink-800;
+    font-family: 'DM Sans', sans-serif;
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(141, 168, 136, 0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(201, 144, 122, 0.05) 0%, transparent 60%);
+    background-attachment: fixed;
+  }
+}
+
+/* ──────────────────────────────────────────────
+   Textarea — hide default browser styling
+   ────────────────────────────────────────────── */
+@layer components {
+  textarea {
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  textarea:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  /* Scrollbar styling for entry list */
+  .entry-list {
+    scrollbar-width: thin;
+    scrollbar-color: #d4ccb8 transparent;
+  }
+
+  .entry-list::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .entry-list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .entry-list::-webkit-scrollbar-thumb {
+    background: #d4ccb8;
+    border-radius: 4px;
+  }
+
+  /* Submit button — warm ink styling */
+  .submit-btn {
+    background-color: #322e22;
+    color: #f5f3ee;
+  }
+
+  .submit-btn:hover:not(:disabled) {
+    background-color: #1e1b14;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(50, 46, 34, 0.25);
+  }
+
+  .submit-btn:active:not(:disabled) {
+    transform: translateY(0);
+  }
+
+  /* Export button */
+  .export-btn {
+    background-color: #f5f3ee;
+    color: #635a42;
+    border: 1px solid #e8e4d8;
+  }
+
+  .export-btn:hover {
+    background-color: #e8e4d8;
+    border-color: #d4ccb8;
+  }
+
+  /* Journal form focused state */
+  .journal-form:focus-within {
+    border-color: #d4ccb8;
+    box-shadow: 0 0 0 3px rgba(212, 204, 184, 0.15);
+  }
+
+  /* Entry card hover */
+  .entry-card:hover {
+    box-shadow: 0 2px 12px rgba(50, 46, 34, 0.06);
+    transform: translateY(-1px);
+  }
+}
+
+/* ──────────────────────────────────────────────
+   Animations
+   ────────────────────────────────────────────── */
+@layer utilities {
+  .animation-delay-100 { animation-delay: 100ms; }
+  .animation-delay-200 { animation-delay: 200ms; }
+  .animation-delay-300 { animation-delay: 300ms; }
+}
